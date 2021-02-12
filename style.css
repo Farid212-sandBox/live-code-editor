@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+}
+
+.code-area{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.code-area textarea{
+    width: 100%;
+    resize: none;
+    outline: none;
+    height: calc(100%/3);
+
+}
+
+.preview-area {
+    width: 50%;
+}
+
+.preview-area iframe{
+    width: 100%;
+    height: 100%;
+}

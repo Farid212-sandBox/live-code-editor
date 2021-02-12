@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<div class="code-area">
+		<textarea placeholder="HTML Code" id="htmlCode" oninput="showPreview()"></textarea>
+		<textarea placeholder="CSS Code" id="cssCode" oninput="showPreview()"></textarea>
+		<textarea placeholder="JavaScript Code" id="jsCode" oninput="showPreview()"></textarea>
+	</div>
+	<div class="preview-area">
+		<iframe id="preview-window"></iframe>
+	</div>
+
+	<script type="text/javascript">
+		const showPreview = () =>{
+			let htmlCode = document.getElementById('htmlCode').value;
+			let cssCode = '<style>'+document.getElementById('cssCode').value +'</style>';
+			let jsCode = '<scri'+'pt>'+document.getElementById('jsCode').value+'</s'+'cript>';
+			let frame = document.getElementById('preview-window').contentWindow.document;
+			frame.open();
+			frame.write(htmlCode+cssCode+jsCode);
+			frame.close();
+		}
+	</script>
+</body>
+</html>
